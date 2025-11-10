@@ -4,39 +4,30 @@
 
 Welcome to the JavaScript course! This course is designed to provide you with a comprehensive understanding of JavaScript programming language, covering fundamental concepts, advanced topics, and practical examples. By the end of this course, you will have the knowledge and skills to build dynamic and interactive web applications using JavaScript.
 
-## Course Content
+## Week 1 - Day 1
 
-### 1. Introduction to JavaScript (01_basics, 01 - 03, 05)
+### JavaScript Basics
 
-- Introduction to JavaScript and its role in web development.
-- Basics of JavaScript syntax, variables, data types, and operators.
-- Control structures: if...else statements, loops, and switch statements.
+- **Comments**: Used to explain code and are not executed. There are two types: line comments and block comments.
+- **Variables**: A variable is a piece of memory that stores a value that can be changed. Good naming practices are essential for maintainability. Reserved keywords (e.g., `let`, `var`, `const`) cannot be used as variable names.
+- **Declaration Keywords**:
+  - `var`: Function scoped, accessible anywhere in the function.
+  - `let`: Block scoped, accessible only within the block.
+  - `const`: Constant, can only be initialized once.
 
-### 2. Arrays and Objects (01_basics, 04)
+### Data Types
 
-- Working with arrays: creation, manipulation, and iteration.
-- Understanding objects and their properties.
-- Object-oriented programming concepts in JavaScript.
-
-### 3. Functions and Scope (01_basics, 06)
-
-- Function declaration and expression.
-- Function parameters and return values.
-- Scope and closure in JavaScript.
-
-### 4. DOM Manipulation (02_DOM, 01 - 02)
-
-- Introduction to the Document Object Model (DOM).
-- Selecting and modifying DOM elements using JavaScript.
-- Event handling: attaching event listeners and responding to user interactions.
-
-### 5. Asynchronous JavaScript
-
-- Importance of asynchronous operations in JavaScript.
-- Callback functions and their role in handling asynchronous tasks.
-- Promises: creation, chaining, and error handling.
-- Async/await syntax for writing asynchronous code in a synchronous style.
-- Practical examples of fetching data from an API asynchronously.
+- **Definition**: Data types specify the kind of information a variable holds, guiding the computer on how to use it.
+- **Primitive Data Types**: There are 7 primitive data types in JavaScript:
+  - `string`
+  - `number`
+  - `BigInt`
+  - `boolean`
+  - `Symbol`
+  - `undefined`
+  - `null`
+- **Non-Primitive Data Type**: The only non-primitive data type is `object`.
+- **Immutability**: Primitive data types are immutable and stored on the Call Stack.
 
 ## How to Use This Repository
 
