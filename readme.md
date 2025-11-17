@@ -29,30 +29,13 @@ Welcome to the JavaScript course! This course is designed to provide you with a 
 - **Non-Primitive Data Type**: The only non-primitive data type is `object`.
 - **Immutability**: Primitive data types are immutable and stored on the Call Stack.
 
-### Conditional Statements
-
-- **if/else statements**: Execute code blocks based on conditions
-- **switch statements**: Alternative syntax for multiple conditions (syntactic sugar)
-- **Ternary operator**: Concise one-line conditional expressions `condition ? true_value : false_value`
-
-### Loops
-
-- **for loop**: Iterate with counter variable, ideal for arrays with index access
-- **forEach**: Array method for iterating over each element
-- **while loop**: Execute code while a condition remains true
-
-### Objects
-
-- **Object literals**: Key-value pairs enclosed in curly braces `{}`
-- **Properties**: Can contain any data type including nested objects and arrays
-- **Methods**: Functions defined as object properties
-- **Dot notation**: Access object properties using `object.property`
-
 ## Week 1 - Day 2
 
-### Review Quiz
+### Kickoff: Day 1 Review Quiz
 
-A comprehensive quiz covering Day 1 topics is available in `01_basics/00_exercises/quiz_day1_review.js`. Topics include:
+Warm-up quiz to review Day 1. File: `01_basics/00_exercises/quiz_day1_review.js`
+
+Covers:
 - Variables and declarations (var, let, const)
 - Data types and typeof operator
 - String concatenation vs template literals
@@ -60,6 +43,51 @@ A comprehensive quiz covering Day 1 topics is available in `01_basics/00_exercis
 - Arrays and indexing
 - Logical operators (&&, ||, !)
 - Comparison operators (==, ===)
+
+### Conditional Statements
+
+- `if / else if / else`: Execute code blocks based on conditions
+- `switch`: Alternative syntax for multiple conditions (syntactic sugar)
+- Ternary operator: `condition ? valueIfTrue : valueIfFalse`
+- Example: `01_basics/03_conditional.js`
+
+### Loops
+
+- `for` loop: Iterate with a counter; great for indexed arrays
+- `Array.prototype.forEach`: Iterate over array elements with a callback
+- `while` loop: Repeat while a condition remains true
+- Example: `01_basics/04_loops.js`
+
+### Objects
+
+- Object literals: Key–value pairs with `{}`
+- Properties and nested structures (arrays, objects)
+- Methods: Functions as object properties
+- Access with dot and bracket notation
+- Example: `01_basics/05_objects.js`
+
+### Functions (Introduction)
+
+- Function declarations vs expressions
+- Parameters, default values, and return values
+- Arrow functions (ES6)
+- Scope: block vs function scope (`let/const` vs `var`)
+- Closures and higher-order functions (filter/sort examples)
+- Example: `01_basics/06_functions.js`
+
+### Practice
+
+- Arrays hidden-words exercise: `01_basics/00_exercises/03_arrays.js`
+
+### Tip: Running the examples
+
+Use `01_basics/index.html` and toggle the `<script>` tag to the file you want to run, e.g.:
+
+```html
+<!-- <script src="01_basics.js"></script> -->
+<!-- <script src="04_loops.js"></script> -->
+<script src="05_objects.js"></script>
+```
 
 ## How to Use This Repository
 
