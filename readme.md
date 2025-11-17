@@ -29,6 +29,38 @@ Welcome to the JavaScript course! This course is designed to provide you with a 
 - **Non-Primitive Data Type**: The only non-primitive data type is `object`.
 - **Immutability**: Primitive data types are immutable and stored on the Call Stack.
 
+### Conditional Statements
+
+- **if/else statements**: Execute code blocks based on conditions
+- **switch statements**: Alternative syntax for multiple conditions (syntactic sugar)
+- **Ternary operator**: Concise one-line conditional expressions `condition ? true_value : false_value`
+
+### Loops
+
+- **for loop**: Iterate with counter variable, ideal for arrays with index access
+- **forEach**: Array method for iterating over each element
+- **while loop**: Execute code while a condition remains true
+
+### Objects
+
+- **Object literals**: Key-value pairs enclosed in curly braces `{}`
+- **Properties**: Can contain any data type including nested objects and arrays
+- **Methods**: Functions defined as object properties
+- **Dot notation**: Access object properties using `object.property`
+
+## Week 1 - Day 2
+
+### Review Quiz
+
+A comprehensive quiz covering Day 1 topics is available in `01_basics/00_exercises/quiz_day1_review.js`. Topics include:
+- Variables and declarations (var, let, const)
+- Data types and typeof operator
+- String concatenation vs template literals
+- Arithmetic operations
+- Arrays and indexing
+- Logical operators (&&, ||, !)
+- Comparison operators (==, ===)
+
 ## How to Use This Repository
 
 - Each topic is organized into separate folders containing example code.
