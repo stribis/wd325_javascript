@@ -86,30 +86,38 @@ const purchases = [
   },
 ];
 
+const newDate = new Date(Date.now());
+
 purchases.forEach((purchase) => {
   // Receipt
   let template = `
-  -- Zelda's shop of Rupees -- 
+-- Zelda's shop of Rupees -- 
   
-  Thank you for chosing our shop.
-  Here is a list of what you have purchased: 
-  ------`;
-  console.log(template);
-  // let sum = 0;
+Thank you for chosing our shop.
+Here is a list of what you have purchased: 
+------
+`;
+
+  // console.log(template);
+
+  let sum = 0;
   purchase.items.forEach((item) => {
-    // sum += item.price;
-    template += `${item.name} x1 ${item.price}$`;
+    sum += item.price;
+    template += `${item.name} x1 ${item.price}$\n`;
   });
 
-  template += `------
+  template += `
+------
   
-  Total: $$$$$
-  
-  Thank you, "CLIENT" for always being a valuable costumer!
-  
-  ${Date.now()}
-  
-  `;
+Total: ${sum}
+
+Thank you, ${
+    clients[purchase.client - 1].firstName
+  } for always being a valuable costumer!
+
+${newDate.toString()}
+
+`;
 
   console.log(template);
 });
