@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.user-card {
+  background: white;
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.username {
+  color: #777;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.info-section h4 {
+  margin: 10px 0 4px;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.info-item {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
