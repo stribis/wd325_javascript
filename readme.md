@@ -179,6 +179,13 @@ Dynamic user card generation exercise demonstrating:
 
 Files: `02_dom/00_exercises/01_awesome_list_of_friends/`
 
+### Warm-up & Todo App (02_dom)
+
+- Today's lesson in `02_dom` covered a DOM warm-up exercise and a simple Todo App.
+- Warm-up exercise: `02_dom/00_exercises/02_warm_up_dom` — practice selecting and updating elements via JS.
+- Simple Todo App: `02_dom/00_exercises/03_todo` — basic add, mark-complete, and clear-completed UI; see `index.html`, `code.js`, and `style.css` inside that folder.
+- The `03_exercises` folder at the repository root contains additional take-home exercises for students and is intentionally not summarized as lesson material here.
+
 ## How to Use This Repository
 
 - Each topic is organized into separate folders containing example code.
