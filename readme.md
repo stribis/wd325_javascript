@@ -186,6 +186,46 @@ Files: `02_dom/00_exercises/01_awesome_list_of_friends/`
 - Simple Todo App: `02_dom/00_exercises/03_todo` — basic add, mark-complete, and clear-completed UI; see `index.html`, `code.js`, and `style.css` inside that folder.
 - The `03_exercises` folder at the repository root contains additional take-home exercises for students and is intentionally not summarized as lesson material here.
 
+### Form Validation (03_form_validation)
+
+Client-side form validation exercise demonstrating:
+
+- `event.preventDefault()`: Prevent default form submission behavior (page reload)
+- **Two validation approaches:**
+  - `code_submit.js`: Validate all fields on form submission
+  - `code_focus.js`: Validate individual fields on blur (focus out)
+- Form field validation patterns:
+  - Required fields check
+  - Minimum length validation
+  - Email format validation (regex: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`)
+  - Postal code format validation
+- Error handling:
+  - Dynamic error message display
+  - Clear existing errors before validation
+  - Field-specific error messages
+- Data collection: Retrieve and store form values in a data object
+
+Files: `02_dom/03_form_validation/` (includes `index.html`, `code_submit.js`, `code_focus.js`, `style.css`)
+
+### Image Slider (04_slider)
+
+Interactive image slider/carousel demonstrating:
+
+- DOM manipulation with `append()` and `prepend()`
+- Event handling:
+  - Button clicks for navigation
+  - Keyboard controls (arrow keys)
+- Dynamic content updates:
+  - Track current slide number
+  - Update slide description from image `alt` attribute
+- Helper functions:
+  - `getAllSlides()`: Dynamically select all slide elements
+  - `moveRight()` / `moveLeft()`: Slide navigation logic
+  - `updateDescription()`: Update UI text based on current slide
+- Ternary operators for state management
+
+Files: `02_dom/04_slider/` (includes `index.html`, `code.js`, `style.css`)
+
 ## How to Use This Repository
 
 - Each topic is organized into separate folders containing example code.
