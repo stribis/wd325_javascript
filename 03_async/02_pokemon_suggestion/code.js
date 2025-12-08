@@ -45,6 +45,7 @@ function displayCurrentPokemon() {
   const pokemonContainer = document.querySelector(
     '.pokemon__container'
   );
+  pokemonContainer.innerHTML = ''; // clear the container
   const card = document.createElement('div');
   card.classList.add('pokemon__card');
   // TODO: How about Image, types
@@ -85,7 +86,7 @@ function handleSkip() {
         getSuggestedPokemon();
       } else {
         // Display the "new" current pokemon
-        displayCurrentPokemon();
+        getCurrentPokemon();
       }
     },
     { once: true }
@@ -106,7 +107,11 @@ function handleLike() {
         getSuggestedPokemon();
       } else {
         // Display the "new" current pokemon
-        displayCurrentPokemon();
+        getCurrentPokemon(
+          `https://pokeapi.co/api/v2/pokemon/${
+            state.currentIndex + 1
+          }/`
+        );
       }
     },
     { once: true }
