@@ -27,9 +27,9 @@ Welcome to the JavaScript course! This course is designed to provide you with a 
 - **Non-Primitive Data Type**: The only non-primitive data type is `object`.
 - **Immutability**: Primitive data types are immutable and stored on the Call Stack.
 
-### Kickoff: Day 1 Review Quiz
+### Review Quiz
 
-Warm-up quiz to review Day 1. File: `01_basics/00_exercises/quiz_day1_review.js`
+Warm-up quiz to review JavaScript basics. File: `01_basics/00_exercises/quiz_day1_review.js`
 
 Covers:
 
@@ -85,6 +85,8 @@ Use `01_basics/index.html` and toggle the `<script>` tag to the file you want to
 <!-- <script src="04_loops.js"></script> -->
 <script src="05_objects.js"></script>
 ```
+
+## DOM Lessons (02_dom)
 
 ### DOM Basics
 
@@ -179,14 +181,14 @@ Dynamic user card generation exercise demonstrating:
 
 Files: `02_dom/00_exercises/01_awesome_list_of_friends/`
 
-### Warm-up & Todo App (02_dom)
+### Warm-up & Todo App
 
-- Today's lesson in `02_dom` covered a DOM warm-up exercise and a simple Todo App.
-- Warm-up exercise: `02_dom/00_exercises/02_warm_up_dom` — practice selecting and updating elements via JS.
-- Simple Todo App: `02_dom/00_exercises/03_todo` — basic add, mark-complete, and clear-completed UI; see `index.html`, `code.js`, and `style.css` inside that folder.
-- The `03_exercises` folder at the repository root contains additional take-home exercises for students and is intentionally not summarized as lesson material here.
+Introduction to DOM manipulation and interactive UIs:
 
-### Form Validation (03_form_validation)
+- Warm-up exercise: `02_dom/00_exercises/02_warm_up_dom` — practice selecting and updating elements via JS
+- Simple Todo App: `02_dom/00_exercises/03_todo` — basic add, mark-complete, and clear-completed UI; see `index.html`, `code.js`, and `style.css`
+
+### Form Validation
 
 Client-side form validation exercise demonstrating:
 
@@ -207,7 +209,7 @@ Client-side form validation exercise demonstrating:
 
 Files: `02_dom/03_form_validation/` (includes `index.html`, `code_submit.js`, `code_focus.js`, `style.css`)
 
-### Image Slider (04_slider)
+### Image Slider
 
 Interactive image slider/carousel demonstrating:
 
