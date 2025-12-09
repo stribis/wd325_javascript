@@ -45,19 +45,15 @@ async function getSuggestedPokemons() {
       results.map(async (result, index) => {
         // Calculate Pokemon ID using offset and index
         const id = state.offset + index + 1;
-        //Format the image ID as a three-digit string for the image URL
-        const imgIndex = id.toString().padStart(3, '0');
-        // Construct the Pokémon's image URL
-        const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${imgIndex}.png`;
-
         /*
         Fetch additional Pokemon details (type) from the pokemon-form endpoint
         */
         const statResponse = await fetch(
-          `https://pokeapi.co/api/v2/pokemon-form/${id}`
+          `https://pokeapi.co/api/v2/pokemon/${id}`
         );
         const statData = await statResponse.json();
-
+        console.log(statData);
+        
         /*
             Return an object that combines the Pokémon's base data
             (e.g., name, URL) with the additional details (e.g., types).
@@ -65,7 +61,7 @@ async function getSuggestedPokemons() {
         return {
           ...result, // Include base Pokémon data, the spread operator copies the properties from the source object to the target object
           id, // Pokémon ID
-          image, // Pokémon image URL
+          image: statData.sprites.other['official-artwork'].front_default, // Pokémon image URL
           types: statData.types
             .map((typeInfo) => typeInfo.type.name)
             .join(', '), // Pokémon types as a comma-separated string
@@ -104,7 +100,7 @@ function displayCurrentPokemon() {
   );
   pokemonContainer.innerHTML = ''; // clear the container
 
-  // Retrievet the current Pokemon based on the index
+  // Get the current Pokemon based on the index
   const pokemon = state.suggestedPokemons[state.currentIndex];
 
   // Create a card element for the pokemon
