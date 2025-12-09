@@ -226,6 +226,71 @@ Interactive image slider/carousel demonstrating:
 
 Files: `02_dom/04_slider/` (includes `index.html`, `code.js`, `style.css`)
 
+## Advanced JavaScript (03_advanced)
+
+### Asynchronous Programming & Data Fetching (01_async)
+
+**Overview:**
+Introduction to asynchronous JavaScript, handling time-dependent operations, and fetching data from APIs.
+
+**Key Concepts:**
+
+- **Async/Await Syntax:**
+  - `async function`: Declares an asynchronous function
+  - `await`: Pauses execution until a Promise resolves
+  - Better readability compared to `.then()` chains
+  
+- **Try/Catch Blocks:**
+  - Error handling for async operations
+  - `try`: Execute async code that might fail
+  - `catch`: Handle errors gracefully
+  
+- **Data Fetching:**
+  - `fetch()` API: Make HTTP requests to external APIs
+  - `response.json()`: Parse JSON response data
+  - `Promise.all()`: Wait for multiple async operations to complete
+  - Handling pagination with offsets
+
+- **Practical Example - Simple Async Example:**
+  - Basic fetch and data retrieval
+  - Files: `03_advanced/01_async/01_simple_example/` (includes `code.js`, `index.html`)
+
+- **Project - Pokémon Suggestion App (Tinder-style):**
+  - Fetch Pokémon data from PokeAPI
+  - Manage application state with `offset` for pagination
+  - Map over results to fetch additional Pokémon details (types, images)
+  - User interaction: swipe/like/dislike mechanics
+  - Files: `03_advanced/01_async/02_pokemon_suggestion/` (includes `code.js`, `index.html`, `styles.css`)
+
+### Higher-Order Array Methods (02_methods)
+
+**Overview:**
+Methods that operate on arrays by accepting callback functions and transforming data.
+
+**Key Methods:**
+
+- **`Array.prototype.filter()`:**
+  - Creates a new array with elements that pass a test function
+  - Returns a boolean: `true` includes element, `false` excludes it
+  - Example: `scores.filter((score) => score > 20 && score < 40)`
+  - Works with primitives and objects
+
+- **`Array.prototype.map()`:**
+  - Transforms each element using a callback function
+  - Returns a new array of transformed elements
+  - Often used to extract or modify properties
+  
+- **Combining Methods:**
+  - Chain filter/map for complex data transformations
+  - Example: Filter premium users, then map to get only names
+
+- **Exercise Patterns:**
+  - Filter with single conditions
+  - Filter with multiple conditions (&&, ||, !)
+  - Filter arrays of objects by property values
+
+Files: `03_advanced/02_methods/code.js` (includes exercises and examples)
+
 ## How to Use This Repository
 
 - Each topic is organized into separate folders containing example code.
