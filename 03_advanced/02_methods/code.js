@@ -1,4 +1,6 @@
-const scores = [10, 30, 15, 25, 50, 40, 5, 20, 10, 30, 15, 25, 50, 40, 5, 20];
+const scores = [
+  10, 30, 15, 25, 50, 40, 5, 20, 10, 30, 15, 25, 50, 40, 5, 20,
+];
 
 /*
  FILTER METHOD:
@@ -12,27 +14,29 @@ const scores = [10, 30, 15, 25, 50, 40, 5, 20, 10, 30, 15, 25, 50, 40, 5, 20];
 */
 
 // we filter all scores that are bigger than 20 and smaller than 40
-const filteredScores = scores.filter((score) => score > 20 && score < 40);
-console.log("filteredScores: ", filteredScores);
+const filteredScores = scores.filter(
+  (score) => score > 20 && score < 40
+);
+console.log('filteredScores: ', filteredScores);
 
 console.clear();
 
 /* FILTER METHOD WITH AN ARRAY OF OBJECTS */
 const users = [
-  { name: "Shaun", premium: true },
-  { name: "Yoshi", premium: false },
-  { name: "Mario", premium: false },
-  { name: "Chun-Li", premium: true },
-  { name: "Luigi", premium: true },
-  { name: "Toad", premium: false },
-  { name: "Bowser", premium: true },
+  { name: 'Shaun', premium: true },
+  { name: 'Yoshi', premium: false },
+  { name: 'Mario', premium: false },
+  { name: 'Chun-Li', premium: true },
+  { name: 'Luigi', premium: true },
+  { name: 'Toad', premium: false },
+  { name: 'Bowser', premium: true },
 ];
 
 // we filter all users, that have a premium account
 // since we always filter according to TRUE, the array will
 // only contain users that have a premium account
 const premiumUsers = users.filter((user) => user.premium);
-console.log("premiumUsers: ", premiumUsers);
+console.log('premiumUsers: ', premiumUsers);
 
 // Exercise 1: Filter the scores that are smaller/equal to 15
 const scoreLessThan15 = scores.filter((score) => score <= 15);
@@ -44,7 +48,9 @@ console.log(nonPremiumUsers);
 
 // Exercise 3: Filter the user, that are not premium and their names are longer
 // then 4 characters
-const NonPremiumUsersLongNames = users.filter((user) => !user.premium && user.name.length > 4);
+const NonPremiumUsersLongNames = users.filter(
+  (user) => !user.premium && user.name.length > 4
+);
 console.log(NonPremiumUsersLongNames);
 
 console.clear();
@@ -59,21 +65,21 @@ console.clear();
 */
 
 const salePrices = filteredScores.map((score) => score / 2);
-console.log("salePrices: ", salePrices);
+console.log('salePrices: ', salePrices);
 
 console.clear();
 
 const products = [
-  { name: "gold star", price: 20 },
-  { name: "mushroom", price: 40 },
-  { name: "green shells", price: 30 },
-  { name: "banana skin", price: 10 },
-  { name: "red shells", price: 50 },
-  { name: "blue shells", price: 60 },
-  { name: "star", price: 70 },
-  { name: "bullet bill", price: 80 },
-  { name: "lightning bolt", price: 90 },
-  { name: "blooper", price: 100 },
+  { name: 'gold star', price: 20 },
+  { name: 'mushroom', price: 40 },
+  { name: 'green shells', price: 30 },
+  { name: 'banana skin', price: 10 },
+  { name: 'red shells', price: 50 },
+  { name: 'blue shells', price: 60 },
+  { name: 'star', price: 70 },
+  { name: 'bullet bill', price: 80 },
+  { name: 'lightning bolt', price: 90 },
+  { name: 'blooper', price: 100 },
 ];
 
 // we create a new array, which halves the price of each product
@@ -89,7 +95,7 @@ const salesProducts = products.map((product) => {
   }
 });
 
-console.log("salesProducts: ", salesProducts);
+console.log('salesProducts: ', salesProducts);
 
 console.clear();
 
@@ -102,18 +108,18 @@ console.clear();
     which are NOT null (filter-method)
 */
 const students = [
-  { name: "Alice", grade: 45 },
-  { name: "Bob", grade: 85 },
-  { name: "Charlie", grade: 50 },
-  { name: "Dave", grade: 30 },
+  { name: 'Alice', grade: 45 },
+  { name: 'Bob', grade: 85 },
+  { name: 'Charlie', grade: 50 },
+  { name: 'Dave', grade: 30 },
   { name: null, grade: 100 },
-  { name: "Eve", grade: 95 },
-  { name: "Frank", grade: 20 },
-  { name: "Grace", grade: 55 },
-  { name: "Heidi", grade: 65 },
-  { name: "Ivan", grade: 75 },
+  { name: 'Eve', grade: 95 },
+  { name: 'Frank', grade: 20 },
+  { name: 'Grace', grade: 55 },
+  { name: 'Heidi', grade: 65 },
+  { name: 'Ivan', grade: 75 },
   { name: null, grade: 75 },
-  { name: "Judy", grade: 40 },
+  { name: 'Judy', grade: 40 },
 ];
 
 const passedStudents = students
@@ -122,11 +128,15 @@ const passedStudents = students
       return { name: student.name };
     }
   })
-  .filter((student) => student !== undefined && student.name !== null);
+  .filter(
+    (student) => student !== undefined && student.name !== null
+  );
 
 console.log(passedStudents);
 
-const shortcut = students.filter((student) => student.grade >= 50 && student.name !== null);
+const shortcut = students.filter(
+  (student) => student.grade >= 50 && student.name !== null
+);
 console.log(shortcut);
 
 console.clear();
@@ -143,3 +153,17 @@ console.clear();
 - it doesn't change the original array
 - use case: iteration through an array, WITHOUT processing the data inside the array
 */
+
+const originalArray = [1, 2, 3, 4, 5];
+const resultForEach = originalArray.forEach(
+  (element, i) => element * 2
+);
+
+console.log(resultForEach);
+console.log(originalArray);
+console.clear();
+
+const resultMap = originalArray.map((element, i) => element * 2);
+console.log(resultMap);
+console.log(originalArray);
+console.clear();
