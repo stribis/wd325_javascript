@@ -293,6 +293,45 @@ Methods that operate on arrays by accepting callback functions and transforming 
 
 Files: `03_advanced/02_methods/code.js` (includes exercises and examples)
 
+### ES6+ Features (03_es6)
+
+**Overview:**
+Modern JavaScript (ES6 and beyond) features that improve code readability, reusability, and functionality.
+
+**Key Concepts:**
+
+- **Default Parameters:**
+  - Provide default values for function parameters
+  - Used when no argument is passed or `undefined` is provided
+  - Example: `function greet(name = 'Guest') { ... }`
+
+- **Destructuring:**
+  - Extract values from objects and arrays into separate variables
+  - Object destructuring: `const { bread, cheese } = sandwich`
+  - Array destructuring: `const [first, second] = array`
+  - Simplifies accessing nested properties
+  - Object Literal Enhancement: Shorthand for properties and methods
+
+- **Spread Operator (`...`):**
+  - Expands arrays or objects into individual elements
+  - Rest parameters in functions: `function sum(...numbers) { ... }`
+  - Combining arrays: `const combined = [...array1, ...array2]`
+  - String manipulation with spread
+  - Useful for non-destructive array/object operations
+
+- **Classes (ES6):**
+  - Blueprint for creating objects with `constructor` and methods
+  - `constructor()`: Initializes object properties
+  - Methods: Define behavior for class instances
+  - `new` keyword: Creates instance of a class
+  - Example: `class Vacation { constructor(destination, duration) { ... } }`
+
+- **Project - Squares:**
+  - Practical application of ES6 classes
+  - Files: `03_advanced/03_es6/05_squares/` (includes `code.js`, `index.html`)
+
+Files: `03_advanced/03_es6/` (includes `01_default_parameters.js`, `02_destructuring.js`, `03_spread.js`, `04_classes.js`)
+
 ## How to Use This Repository
 
 - Each topic is organized into separate folders containing example code.
