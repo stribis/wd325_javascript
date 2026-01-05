@@ -1,78 +1,105 @@
 // Create an empty array for the list
-let todoList = []
+let todoList = [];
 
 // Elements
-const inputField = document.querySelector('#addinput')
+const inputField = document.querySelector('#addinput');
 
-document.querySelector('#addbutton').addEventListener('click', (e) => {
-  e.preventDefault()
-  addTodo()
-})
+getTodos();
 
-
-function addTodo () {
-  const newTodo = inputField.value.trim()
-
-  // Simple input validation
-  if (newTodo !== ''){
-    // If the string is not empty
-    const todoObject = {
-      text: newTodo,
-      complete: false
-    }
-    todoList.push(todoObject)
-    localStorage.setItem('todos', JSON.stringify(todoList))
-    inputField.value = ''
-    console.log(todoList)
-    populateTodoList()
-
-  } else {
-    alert('Error, incorrect input')
+function getTodos() {
+  if (localStorage.getItem('todos')) {
+    todoList = JSON.parse(localStorage.getItem('todos'));
+    populateTodoList();
   }
 }
 
-function populateTodoList () {
-    // Create the todo list
-    const list = document.querySelector('#list')
-    list.innerHTML = ''
+document
+  .querySelector('#addbutton')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    addTodo();
+  });
 
-    if ( todoList.length > 0 ) {
-      todoList.forEach((todo, i)=> {
-        // Create LI element
-        const todoWrapper = document.createElement('li')
-        todoWrapper.classList.add('todoWrapper')
-        todoWrapper.innerHTML = `
-        <div class="todoText" >${todo.text}</div>
-        <div class="todoCheck ${todo.complete ? 'complete': 'false'}" data-index="${i}"></div>
-        
-        `
-        //<input type="checkbox" ${todo.complete ? 'checked': ''} data-index="${i}">
-        list.appendChild(todoWrapper)
-      })
+function addTodo() {
+  const newTodo = inputField.value.trim();
 
-    }
-    updateCheckBoxes()
+  // Simple input validation
+  if (newTodo !== '') {
+    // If the string is not empty
+    const todoObject = {
+      text: newTodo,
+      complete: false,
+    };
+    todoList.push(todoObject);
+    localStorage.setItem('todos', JSON.stringify(todoList));
+    inputField.value = '';
+    console.log(todoList);
+    populateTodoList();
+  } else {
+    alert('Error, incorrect input');
+  }
 }
 
-function updateCheckBoxes () {
-  let checkBoxes = document.querySelectorAll('.todoCheck')
+function populateTodoList() {
+  // Create the todo list
+  const list = document.querySelector('#list');
+  list.innerHTML = '';
+
+  if (todoList.length > 0) {
+    todoList.forEach((todo, i) => {
+      // Create LI element
+      const todoWrapper = document.createElement('li');
+      todoWrapper.classList.add('todoWrapper');
+      todoWrapper.innerHTML = `
+        <div class="todoText" >${todo.text}</div>
+        <div class="todoCheck ${
+          todo.complete ? 'complete' : 'false'
+        }" data-index="${i}"></div>
+        
+        `;
+      //<input type="checkbox" ${todo.complete ? 'checked': ''} data-index="${i}">
+      list.appendChild(todoWrapper);
+    });
+  }
+  updateCheckBoxes();
+}
+
+function updateCheckBoxes() {
+  let checkBoxes = document.querySelectorAll('.todoCheck');
   checkBoxes.forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
-      const index = checkbox.getAttribute('data-index')
-      todoList[index].complete = !todoList[index].complete
-      localStorage.setItem('todos', JSON.stringify(todoList))
+      const index = checkbox.getAttribute('data-index');
+      todoList[index].complete = !todoList[index].complete;
+      localStorage.setItem('todos', JSON.stringify(todoList));
 
-      populateTodoList()
-
- 
-    })
-  })
+      populateTodoList();
+    });
+  });
 }
 
-document.querySelector('#markAsComplete').addEventListener('click', e => {
-  e.preventDefault()
+// clear COMPLETED items
+document
+  .querySelector('#clearCompleted')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    todoList = todoList.filter((todo) => !todo.complete);
 
-  todoList = todoList.map(todo => ({...todo, complete:true}))
-  console.log(todoList)
-  populateTodoList()
-})
+    //  Set in localstorage
+    localStorage.setItem('todos', JSON.stringify(todoList));
+
+    //update the DOM
+    populateTodoList();
+  });
+
+document
+  .querySelector('#markAsComplete')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+
+    todoList = todoList.map((todo) => ({ ...todo, complete: true }));
+
+    //  Set in localstorage
+    localStorage.setItem('todos', JSON.stringify(todoList));
+
+    populateTodoList();
+  });
