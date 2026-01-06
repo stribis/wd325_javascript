@@ -1,0 +1,38 @@
+[
+  {
+    "user": "Foo",
+    "blogTitle": "My first blog",
+    "blogContent": "This is my first blog post. I'm so excited to start blogging!",
+    "image": {
+      "blogImage": "image1.png",
+      "imageAlt": "A cute cat"
+    },
+    "date": "2021-01-01",
+    "likes": 10,
+    "tags": ["first", "blog", "excited"]
+  },
+  {
+    "user": "Bar",
+    "blogTitle": "My second blog",
+    "blogContent": "This is my first blog post. I'm so excited to start blogging!",
+    "image": {
+      "blogImage": "image2.png",
+      "imageAlt": "A cute cat"
+    },
+    "date": "2021-01-01",
+    "likes": 10,
+    "tags": ["second", "blog", "excited"]
+  },
+  {
+    "user": "Baz",
+    "blogTitle": "My third blog",
+    "blogContent": "This is my third blog post. I'm so excited to start blogging!",
+    "image": {
+      "blogImage": "image3.png",
+      "imageAlt": "A cute cat"
+    },
+    "date": "2021-01-01",
+    "likes": 10,
+    "tags": ["third", "blog", "excited"]
+  }
+]
