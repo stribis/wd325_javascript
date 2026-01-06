@@ -19,17 +19,12 @@ async function getData() {
     <img src="images/${post.image.blogImage}" alt="${post.image.imageAlt}">
     <div>${post.tags.map(tag => '<span class="tag">'+ tag + '</span>').join(' ')}</div>
     
-
-    
     `
-
     postElement.innerHTML = template
 
     mainContainer.append(postElement)
 
   });
-
-
 }
 
 getData()
