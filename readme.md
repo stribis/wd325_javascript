@@ -1,349 +1,204 @@
-# 4FSC0WD003 - Front-End Development
+# JavaScript Course - WDD 325
 
-## Overview
+Quick reference guide for all course materials.
 
-Welcome to the JavaScript course! This course is designed to provide you with a comprehensive understanding of JavaScript programming language, covering fundamental concepts, advanced topics, and practical examples. By the end of this course, you will have the knowledge and skills to build dynamic and interactive web applications using JavaScript.
+## 📁 Repository Structure
 
-### JavaScript Basics
+### `00_exercises/`
+Practice exercises and challenges organized by topic
 
-- **Comments**: Used to explain code and are not executed. There are two types: line comments and block comments.
-- **Variables**: A variable is a piece of memory that stores a value that can be changed. Good naming practices are essential for maintainability. Reserved keywords (e.g., `let`, `var`, `const`) cannot be used as variable names.
-- **Declaration Keywords**:
-  - `var`: Function scoped, accessible anywhere in the function.
-  - `let`: Block scoped, accessible only within the block.
-  - `const`: Constant, can only be initialized once.
+- **00_Einstufungstest/** - Initial assessment exercises
+- **01_basics_repetition/** - JavaScript fundamentals review
+- **02_general_exercises/** - 20+ practical coding exercises including:
+  - Bouncer, Palindrome Checker, Fibonacci Sequence
+  - Click Counter, To-Do List, Shopping Cart
+  - Password Strength Checker, Temperature Conversion
+  - Dynamic Multiplication Table, Grade List
+  - Light/Dark Mode Toggle, and more
+- **03_code_challenges/** - Additional coding challenges
+- **04_blog_posts/** - Blog post application project
 
-### Data Types
+### `01_basics/`
+JavaScript fundamentals
 
-- **Definition**: Data types specify the kind of information a variable holds, guiding the computer on how to use it.
-- **Primitive Data Types**: There are 7 primitive data types in JavaScript:
-  - `string`
-  - `number`
-  - `BigInt`
-  - `boolean`
-  - `Symbol`
-  - `undefined`
-  - `null`
-- **Non-Primitive Data Type**: The only non-primitive data type is `object`.
-- **Immutability**: Primitive data types are immutable and stored on the Call Stack.
+**Core Concepts:**
+- **Variables:** `let`, `const`, `var` (scope differences)
+  ```javascript
+  let name = "John";        // block-scoped, can reassign
+  const age = 25;           // block-scoped, cannot reassign
+  var city = "Berlin";      // function-scoped (avoid)
+  ```
+- **Data Types:** `string`, `number`, `boolean`, `object`, `undefined`, `null`
+- **Conditionals:**
+  ```javascript
+  if (age >= 18) {
+    console.log("Adult");
+  } else {
+    console.log("Minor");
+  }
+  // Ternary: const status = age >= 18 ? "Adult" : "Minor";
+  ```
+- **Loops:**
+  ```javascript
+  for (let i = 0; i < 5; i++) { /* ... */ }
+  array.forEach((item) => console.log(item));
+  while (condition) { /* ... */ }
+  ```
+- **Objects:**
+  ```javascript
+  const person = {
+    name: "Alice",
+    age: 30,
+    greet() { return `Hello, I'm ${this.name}`; }
+  };
+  ```
+- **Functions:**
+  ```javascript
+  // Declaration
+  function add(a, b) { return a + b; }
+  // Arrow function
+  const multiply = (a, b) => a * b;
+  ```
 
-### Review Quiz
+**Files:** `01_basics.js`, `02_datatypes.js`, `03_conditional.js`, `04_loops.js`, `05_objects.js`, `06_functions.js`  
+**Practice:** `00_exercises/` folder with arrays, quizzes, and shop receipt exercises  
+**Tip:** Toggle `<script>` tags in `index.html` to run different lesson files
 
-Warm-up quiz to review JavaScript basics. File: `01_basics/00_exercises/quiz_day1_review.js`
+### `02_dom/`
+Document Object Model manipulation
 
-Covers:
-
-- Variables and declarations (var, let, const)
-- Data types and typeof operator
-- String concatenation vs template literals
-- Arithmetic operations
-- Arrays and indexing
-- Logical operators (&&, ||, !)
-- Comparison operators (==, ===)
-
-### Conditional Statements
-
-- `if / else if / else`: Execute code blocks based on conditions
-- `switch`: Alternative syntax for multiple conditions (syntactic sugar)
-- Ternary operator: `condition ? valueIfTrue : valueIfFalse`
-- Example: `01_basics/03_conditional.js`
-
-### Loops
-
-- `for` loop: Iterate with a counter; great for indexed arrays
-- `Array.prototype.forEach`: Iterate over array elements with a callback
-- `while` loop: Repeat while a condition remains true
-- Example: `01_basics/04_loops.js`
-
-### Objects
-
-- Object literals: Key–value pairs with `{}`
-- Properties and nested structures (arrays, objects)
-- Methods: Functions as object properties
-- Access with dot and bracket notation
-- Example: `01_basics/05_objects.js`
-
-### Functions (Introduction)
-
-- Function declarations vs expressions
-- Parameters, default values, and return values
-- Arrow functions (ES6)
-- Scope: block vs function scope (`let/const` vs `var`)
-- Closures and higher-order functions (filter/sort examples)
-- Example: `01_basics/06_functions.js`
-
-### Practice
-
-- Arrays hidden-words exercise: `01_basics/00_exercises/03_arrays.js`
-
-### Tip: Running the examples
-
-Use `01_basics/index.html` and toggle the `<script>` tag to the file you want to run, e.g.:
-
-```html
-<!-- <script src="01_basics.js"></script> -->
-<!-- <script src="04_loops.js"></script> -->
-<script src="05_objects.js"></script>
-```
-
-## DOM Lessons (02_dom)
-
-### DOM Basics
-
-**Element Selection Methods:**
-
-- `getElementsByClassName()`: Returns a live HTMLCollection of elements by class name
-- `getElementById()`: Returns element by unique ID (fastest method)
-- `querySelector()`: Returns first element matching CSS selector (most flexible)
-- `querySelectorAll()`: Returns static NodeList of all matching elements
-
-**Comparison:**
-
-| Feature       | `querySelectorAll` | `querySelector` | `getElementsByClassName` | `getElementById` |
-| ------------- | ------------------ | --------------- | ------------------------ | ---------------- |
-| Selector Type | CSS selectors      | CSS selectors   | Class names only         | ID only          |
-| Returns       | Static NodeList    | Single element  | Live HTMLCollection      | Single element   |
-| Flexibility   | High               | High            | Moderate                 | Low              |
-| Performance   | Slower             | Slower          | Faster                   | Fastest          |
-
-**Element Modification:**
-
-- `innerText`: Changes/retrieves visible text (excludes hidden elements)
-- `textContent`: Similar to innerText but includes hidden elements (faster)
-- `innerHTML`: Changes/retrieves HTML content (supports HTML tags)
-
-**Attributes:**
-
-- `setAttribute(name, value)`: Set an attribute
-- `getAttribute(name)`: Get an attribute value
-- `removeAttribute(name)`: Remove an attribute
-- Direct property assignment: `element.id = "myId"`
-
-**Styling:**
-
-- Inline styles: `element.style.color = "red"`
-- CSS classes:
-  - `classList.add(className)`: Add a class
-  - `classList.remove(className)`: Remove a class
-  - `classList.toggle(className)`: Toggle a class
-  - `classList.contains(className)`: Check if class exists
-
-**Creating and Manipulating Elements:**
-
-- `document.createElement(tagName)`: Create new element
-- `appendChild(element)`: Append element to parent
-- `remove()`: Remove element from DOM
-- `removeChild(child)`: Remove child from parent
-- `replaceChild(newChild, oldChild)`: Replace a child element
-- `replaceWith(newElement)`: Replace element (modern approach)
-- `cloneNode(deep)`: Clone element (deep=true clones children too)
-
-Example: `02_dom/01_basics/01_basics.js`
-
-### Event Listeners
-
-**Concept:**
-An event listener watches for specific events (clicks, keypresses, etc.) and executes a callback function when the event occurs.
-
-**addEventListener Syntax:**
-
+**01_basics/** - Selecting & Manipulating Elements
 ```javascript
-element.addEventListener(event, listener, options);
+// Selection
+const el = document.querySelector('.class-name');
+const all = document.querySelectorAll('.items');
+const byId = document.getElementById('myId');
+
+// Modification
+el.textContent = "New text";
+el.innerHTML = "<strong>Bold text</strong>";
+el.style.color = "red";
+el.classList.add('active');
+el.setAttribute('data-id', '123');
+```
+**01_async** - Asynchronous Programming
+```javascript
+// Fetch API data
+async function getPokemon() {
+  try {
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
+    const data = await response.json();
+    console.log(data.name, data.types);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+```
+- `01_simple_example/` - Basic async/await and fetch
+- `02_pokemon_suggestion/` - Tinder-style Pokémon app with PokeAPI
+
+**02_methods/** - Array Methods
+```javascript
+const numbers = [5, 12, 8, 130, 44];
+
+// Filter: create new array with elements that pass test
+const big = numbers.filter(num => num > 10);  // [12, 130, 44]
+
+// Map: transform each element
+const doubled = numbers.map(num => num * 2);  // [10, 24, 16, 260, 88]
+
+// Chaining
+const users = [{name: "Alice", premium: true}, {name: "Bob", premium: false}];
+const premiumNames = users
+  .filter(user => user.premium)
+  .map(user => user.name);  // ["Alice"]
 ```
 
-**Parameters:**
+**03_es6/** - Modern JavaScript
+```javascript
+// Default Parameters
+function greet(name = "Guest") { return `Hello, ${name}`; }
 
-- `event`: Event name string (e.g., "click", "mouseover", "keydown")
-- `listener`: Function to execute when event occurs
-  - Can be anonymous function, function expression, or arrow function
-- `options` (optional):
-  - `capture`: Event capturing phase
-  - `once`: Execute listener only once
-  - `passive`: Won't call preventDefault()
+// Destructuring
+const {name, age} = person;
+const [first, second] = array;
 
-**Common Use Cases:**
+// Spread Operator
+const combined = [...array1, ...array2];
+const copy = {...originalObject};
 
-- Adding interactive buttons
-- Dynamically creating/removing elements
-- Handling user input
-- Responding to mouse and keyboard events
+// Classes
+class Car {
+  constructor(brand, model) {
+    this.brand = brand;
+    this.model = model;
+  }
+  drive() { return `${this.brand} ${this.model} is driving`; }
+}
+const myCar = new Car('Tesla', 'Model 3');
+```
+- Files: `01_default_parameters.js`, `02_destructuring.js`, `03_spread.js`, `04_classes.js`
+- `05_squares/` - Classes project
 
-Example: `02_dom/02_events/02_events.js`
+**04_todo_app/** - Complete todo application 
+```javascript 
+event.target.style.backgroundColor = 'blue';
+});
 
-### Practice: Awesome List of Friends
+// Common events: 'click', 'mouseover', 'keydown', 'submit'
+```
 
-Dynamic user card generation exercise demonstrating:
+**03_form_validation/** - Form Handling
+```javascript
+form.addEventListener('submit', (e) => {
+  e.preventDefault();  // Prevent page reload
+  const email = document.querySelector('#email').value;
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // Show error messages if validation fails
+});
+```
 
-- DOM manipulation
-- Template literals
-- Array iteration with `forEach`
-- Creating complex HTML structures dynamically
+**04_slider/** - Interactive Image Carousel
+- Navigate with buttons and arrow keys
+- Update content dynamically
 
-Files: `02_dom/00_exercises/01_awesome_list_of_friends/`
+**Practice Exercises:**
+- `01_awesome_list_of_friends/` - Dynamic user cards
+- `02_warm_up_dom/` - DOM selection practice
+- `03_todo/` - Interactive todo application
 
-### Warm-up & Todo App
+### `03_advanced/`
+Advanced JavaScript concepts
 
-Introduction to DOM manipulation and interactive UIs:
+- **01_async/** 
+  - `01_simple_example/` - Basic async/await and fetch
+  - `02_pokemon_suggestion/` - API integration project (PokeAPI)
+- **02_methods/** - Higher-order array methods (filter, map, chaining)
+- **03_es6/** - Modern JavaScript features
+  - Default parameters
+  - Destructuring
+  - Spread operator
+  - ES6 Classes
+  - `05_squares/` - Classes project
+- **04_todo_app/** - Complete todo application
+- **05_weather_app/** - Weather API integration project
 
-- Warm-up exercise: `02_dom/00_exercises/02_warm_up_dom` — practice selecting and updating elements via JS
-- Simple Todo App: `02_dom/00_exercises/03_todo` — basic add, mark-complete, and clear-completed UI; see `index.html`, `code.js`, and `style.css`
+## 🚀 Getting Started
 
-### Form Validation
+1. Open any `index.html` file in a browser
+2. Check browser console for JavaScript output
+3. Modify the code and experiment
+4. For `01_basics/`, toggle script tags in `index.html` to switch between lessons
 
-Client-side form validation exercise demonstrating:
+## 📚 Key Topics Covered
 
-- `event.preventDefault()`: Prevent default form submission behavior (page reload)
-- **Two validation approaches:**
-  - `code_submit.js`: Validate all fields on form submission
-  - `code_focus.js`: Validate individual fields on blur (focus out)
-- Form field validation patterns:
-  - Required fields check
-  - Minimum length validation
-  - Email format validation (regex: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`)
-  - Postal code format validation
-- Error handling:
-  - Dynamic error message display
-  - Clear existing errors before validation
-  - Field-specific error messages
-- Data collection: Retrieve and store form values in a data object
+**Basics:** Variables (var/let/const), Data Types, Conditionals, Loops, Objects, Functions  
+**DOM:** Element Selection, Manipulation, Events, Forms, Dynamic Content  
+**Advanced:** Async/Await, Fetch API, Array Methods, ES6+ Features, Classes
 
-Files: `02_dom/03_form_validation/` (includes `index.html`, `code_submit.js`, `code_focus.js`, `style.css`)
+## 🔗 Resources
 
-### Image Slider
-
-Interactive image slider/carousel demonstrating:
-
-- DOM manipulation with `append()` and `prepend()`
-- Event handling:
-  - Button clicks for navigation
-  - Keyboard controls (arrow keys)
-- Dynamic content updates:
-  - Track current slide number
-  - Update slide description from image `alt` attribute
-- Helper functions:
-  - `getAllSlides()`: Dynamically select all slide elements
-  - `moveRight()` / `moveLeft()`: Slide navigation logic
-  - `updateDescription()`: Update UI text based on current slide
-- Ternary operators for state management
-
-Files: `02_dom/04_slider/` (includes `index.html`, `code.js`, `style.css`)
-
-## Advanced JavaScript (03_advanced)
-
-### Asynchronous Programming & Data Fetching (01_async)
-
-**Overview:**
-Introduction to asynchronous JavaScript, handling time-dependent operations, and fetching data from APIs.
-
-**Key Concepts:**
-
-- **Async/Await Syntax:**
-  - `async function`: Declares an asynchronous function
-  - `await`: Pauses execution until a Promise resolves
-  - Better readability compared to `.then()` chains
-  
-- **Try/Catch Blocks:**
-  - Error handling for async operations
-  - `try`: Execute async code that might fail
-  - `catch`: Handle errors gracefully
-  
-- **Data Fetching:**
-  - `fetch()` API: Make HTTP requests to external APIs
-  - `response.json()`: Parse JSON response data
-  - `Promise.all()`: Wait for multiple async operations to complete
-  - Handling pagination with offsets
-
-- **Practical Example - Simple Async Example:**
-  - Basic fetch and data retrieval
-  - Files: `03_advanced/01_async/01_simple_example/` (includes `code.js`, `index.html`)
-
-- **Project - Pokémon Suggestion App (Tinder-style):**
-  - Fetch Pokémon data from PokeAPI
-  - Manage application state with `offset` for pagination
-  - Map over results to fetch additional Pokémon details (types, images)
-  - User interaction: swipe/like/dislike mechanics
-  - Files: `03_advanced/01_async/02_pokemon_suggestion/` (includes `code.js`, `index.html`, `styles.css`)
-
-### Higher-Order Array Methods (02_methods)
-
-**Overview:**
-Methods that operate on arrays by accepting callback functions and transforming data.
-
-**Key Methods:**
-
-- **`Array.prototype.filter()`:**
-  - Creates a new array with elements that pass a test function
-  - Returns a boolean: `true` includes element, `false` excludes it
-  - Example: `scores.filter((score) => score > 20 && score < 40)`
-  - Works with primitives and objects
-
-- **`Array.prototype.map()`:**
-  - Transforms each element using a callback function
-  - Returns a new array of transformed elements
-  - Often used to extract or modify properties
-  
-- **Combining Methods:**
-  - Chain filter/map for complex data transformations
-  - Example: Filter premium users, then map to get only names
-
-- **Exercise Patterns:**
-  - Filter with single conditions
-  - Filter with multiple conditions (&&, ||, !)
-  - Filter arrays of objects by property values
-
-Files: `03_advanced/02_methods/code.js` (includes exercises and examples)
-
-### ES6+ Features (03_es6)
-
-**Overview:**
-Modern JavaScript (ES6 and beyond) features that improve code readability, reusability, and functionality.
-
-**Key Concepts:**
-
-- **Default Parameters:**
-  - Provide default values for function parameters
-  - Used when no argument is passed or `undefined` is provided
-  - Example: `function greet(name = 'Guest') { ... }`
-
-- **Destructuring:**
-  - Extract values from objects and arrays into separate variables
-  - Object destructuring: `const { bread, cheese } = sandwich`
-  - Array destructuring: `const [first, second] = array`
-  - Simplifies accessing nested properties
-  - Object Literal Enhancement: Shorthand for properties and methods
-
-- **Spread Operator (`...`):**
-  - Expands arrays or objects into individual elements
-  - Rest parameters in functions: `function sum(...numbers) { ... }`
-  - Combining arrays: `const combined = [...array1, ...array2]`
-  - String manipulation with spread
-  - Useful for non-destructive array/object operations
-
-- **Classes (ES6):**
-  - Blueprint for creating objects with `constructor` and methods
-  - `constructor()`: Initializes object properties
-  - Methods: Define behavior for class instances
-  - `new` keyword: Creates instance of a class
-  - Example: `class Vacation { constructor(destination, duration) { ... } }`
-
-- **Project - Squares:**
-  - Practical application of ES6 classes
-  - Files: `03_advanced/03_es6/05_squares/` (includes `code.js`, `index.html`)
-
-Files: `03_advanced/03_es6/` (includes `01_default_parameters.js`, `02_destructuring.js`, `03_spread.js`, `04_classes.js`)
-
-## How to Use This Repository
-
-- Each topic is organized into separate folders containing example code.
-- Experiment with the example code to reinforce your understanding and practice JavaScript programming.
-
-## Additional Resources
-
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript): Official documentation for JavaScript.
-- [JavaScript.info](https://javascript.info/): Comprehensive JavaScript tutorials and guides.
-- [Eloquent JavaScript](https://eloquentjavascript.net/): Free online book covering JavaScript programming concepts.
-- [Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript): Learn from a curriculum with the best curated online tutorials, blogs, and courses.
-
-## Feedback and Questions
-
-If you have any feedback or questions regarding the course content, feel free to reach out to the course instructor or TA.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript.info](https://javascript.info/)
+- [Eloquent JavaScript](https://eloquentjavascript.net/)
+- [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript)
