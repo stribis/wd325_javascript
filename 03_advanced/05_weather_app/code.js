@@ -45,9 +45,38 @@ function displayData(data) {
   <p class="description">${data.weather[0].description}</p>
 
   <div class="misc">
-    <h6 class="bold">Visibility</h6>
-    <i class="fa-regular fa-eye" ></i>
-    <p class="info">${classifyVisibility(data.visibility)}</p>
+    <span>
+      <h6 class="bold">Visibility</h6>
+      <i class="fa-regular fa-eye" ></i>
+      <p class="info">${classifyVisibility(data.visibility)}</p>
+    </span>
+    <span>
+      <h6 class="bold">Wind</h6>
+      <i class="fa-solid fa-chevron-up" style="rotate:${data.wind.deg}deg"  ></i>
+      <p class="info">${data.wind.speed} m/s</p>
+    </span>
+    <span>
+      <h6 class="bold">Humidity</h6>
+      <i class="fa-solid fa-droplet"></i>
+      <p class="info">${data.main.humidity}%</p>
+    </span>
+  </div>
+  <div class="misc">
+    <span>
+      <h6 class="bold">Sunrise</h6>
+      <i class="wi-sunrise wi" ></i>
+      <p class="info">${convertTimestamp(data.sys.sunrise)}</p>
+    </span>
+    <span>
+      <h6 class="bold">Sunset</h6>
+      <i class="wi-sunset wi" ></i>
+      <p class="info">${convertTimestamp(data.sys.sunset)}</p>
+    </span>
+    <span>
+      <h6 class="bold">max: ${Math.round(data.main.temp_max)} °C</h6>
+      <i class="wi-thermometer wi" ></i>
+      <h6 class="bold">min: ${Math.round(data.main.temp_min)} °C</h6>
+    </span>
   </div>
   `;
 
@@ -71,11 +100,30 @@ function classifyVisibility(visibilityMeters) {
   }
 }
 
-// VISIBILITY
-// WIND (Richtung & Stärke)
-// HUMIDITY
+function convertTimestamp (timestamp) {
 
-// Sunrise
-// Sunset
-// Max Temp
-// Min Temp
+  const date = new Date(timestamp * 1000)  
+  
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }
+  
+  return date.toLocaleString('de-CH', options)
+}
+
+function setTheme(theme) {
+  document.documentElement.classList.remove('light', 'dark')
+
+  if(theme === 'light' || theme === 'dark') {
+    document.documentElement.classList.add(theme)
+    localStorage.setItem('theme', theme)
+  }
+  
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light'
+  setTheme(savedTheme)
+})
