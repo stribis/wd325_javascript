@@ -2,3 +2,8 @@
 // Find and display the sum, average, and product of the elements. 
 // Additionally, implement a way to identify and display the largest and smallest numbers in the array.
 
+let numbers = []
+for (let i = 0; i < 10; i++) {
+  numbers.push(Math.floor(Math.random() * 100))
+}
+console.log(numbers)
