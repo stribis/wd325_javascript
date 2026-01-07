@@ -1,6 +1,6 @@
 # JavaScript Course - WDD 325
 
-Quick reference guide for all course materials.
+Quick reference guide for all course materials. :)
 
 ## 📁 Repository Structure
 
