@@ -99,6 +99,20 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.entry > button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+}
+
+.entry > button:hover {
+  text-shadow: 1px 1px 1px black ;
+  cursor: pointer;
 }
 
 .entry:hover {
@@ -132,4 +146,27 @@ h2 {
   .form button {
     width: 100%;
   }
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-left: 5px solid #007bff; /* Primary accent color */
+  background-color: #f8f9fa;
+  font-style: italic;
+  color: #555;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #888;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Adds an em-dash before the citation */
+blockquote cite::before {
+  content: "— ";
 }
